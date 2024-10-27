@@ -6,24 +6,24 @@
 
 ## Installation & Setup
 **Step 1**: Clone the repository to your local environment.
-``` bash
+``` {bash}
 git clone https://github.com/betopark97/cookiecutter-data-science.git
 ```
 **Step 2**: Check for existing remotes, if not initialize git or connect to your own repository in the next step.
-``` bash
+``` {bash}
 git remote -v
 ```
 **Step 3**: Replace the existing origin (remote) with the following command (`<new_url>` is a placeholder for the repository where you want to push with this cookiecutter).
-``` bash
+``` {bash}
 git remote set-url origin <new_url>
 ```
 **Step 3-1 (optional)**: This step is instead of the previous step. It will remove an existing origin and add a new one.
-``` bash
+``` {bash}
 git remote remove origin
 git remote add origin <new_url>
 ```
 **Step 4 (optional)**: This step is to erase the .gitkeep files in the empty directories. You may choose to keep them if you want to and skip this step.
-``` bash
+``` {bash}
 python remove_gitkeep.py
 ```
 
@@ -32,7 +32,7 @@ After cloning this repository, the structure of the data science project should 
 
 > The tree below comes with an explanation of the use case of each of the subdirectories and files.
 
-``` bash
+``` {bash}
 ├── LICENSE                 -> MIT License (mine)
 ├── README.md               -> Explanation of Project
 ├── data                    -> Data for Project
