@@ -50,6 +50,7 @@ After cloning this repository, the structure of the data science project should 
 │   └── figures             -> Visual aids (plots, graphs) for the final deliverable
 ├── requirements.txt        -> Requirements to reproduce the packages necessary for the project
 ├── src                     -> Source code for the project
+│   └── utils               -> Utilities for project source code
 └── tests                   -> Tests for different features of the project
 ```
 
