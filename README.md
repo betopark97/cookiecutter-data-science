@@ -27,6 +27,11 @@ git remote add origin <new_url>
 python remove_gitkeep.py
 ```
 
+**Step 5**: This step is the erase the .git file in this directory. If you fork a copy or git clone this repository for your projects, the git log will show the history of this repository. That is why if you want to start clean you must run this python file.
+``` {bash}
+python reset_git.py
+```
+
 ## Project Structure
 After cloning this repository, the structure of the data science project should look like the following:  
 
