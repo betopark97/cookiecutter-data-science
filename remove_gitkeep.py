@@ -25,6 +25,6 @@ def remove_gitkeep_files(root_dir):
 
 if __name__ == "__main__":
     # Path to this root directory
-    root_dir_path = '../cookiecutter-data-science'
+    root_dir_path = os.getcwd()
     # add_gitkeep_to_empty_dirs(root_dir_path)
     remove_gitkeep_files(root_dir_path)
