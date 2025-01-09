@@ -1,33 +1,34 @@
 import os
+import shutil
 
-def reset_git(git_file_path='.git'):
+def reset_git(git_dir_path='.git'):
     """
-    Deletes the specified .git file if it exists and recreates it as an empty file.
+    Deletes the specified .git directory if it exists and reinitializes it.
     
     Parameters:
-        git_file_path (str): Path to the .git file. Default is '.git' in the current directory.
+        git_dir_path (str): Path to the .git directory. Default is '.git' in the current directory.
     
     Returns:
         None
     """
     try:
-        # Step 1: Check if the .git file exists and delete it
-        if os.path.exists(git_file_path):
-            if os.path.isfile(git_file_path):  # Ensure it's a file, not a directory
-                os.remove(git_file_path)
-                print(f"Deleted {git_file_path}")
+        # Step 1: Check if the .git directory exists and delete it
+        if os.path.exists(git_dir_path):
+            if os.path.isdir(git_dir_path):  # Ensure it's a directory, not a file
+                shutil.rmtree(git_dir_path)  # Remove the directory and its contents
+                print(f"Deleted {git_dir_path} directory.")
             else:
-                print(f"{git_file_path} exists but is not a file. Skipping deletion.")
+                print(f"{git_dir_path} exists but is not a directory. Skipping deletion.")
+                return
         else:
-            print(f"{git_file_path} does not exist. Proceeding to recreate it.")
+            print(f"{git_dir_path} does not exist. Proceeding to recreate it.")
 
-        # Step 2: Recreate the .git file
-        with open(git_file_path, 'w') as f:
-            f.write("")  # Empty file
-        print(f"Recreated {git_file_path}")
-    
+        # Step 2: Reinitialize the .git directory as an empty Git repository
+        os.system('git init')  # Use Git to reinitialize the repository
+        print(f"Reinitialized Git repository in {os.getcwd()}")
+
     except Exception as e:
-        print(f"An error occurred while resetting {git_file_path}: {e}")
+        print(f"An error occurred while resetting {git_dir_path}: {e}")
 
 if __name__ == "__main__":
     reset_git()
